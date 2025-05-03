@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блог</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <section class="creat-post">
+        <div class="container">
+            <h1>Мій Блог</h1>
+            <form class="form">
+                <input type="text" class="form-title" placeholder="Заголовок" required />
+                <textarea class="form-text" placeholder="Текст поста" required></textarea>
+                <button type="submit" class="button">Додати пост</button>
+            </form>
+        </div>
+    </section>
+    <div class="container">
+    <h1 class="posts-title">Всі пости</h1>
+    <ul class="posts">
+
+    </ul>
+    </div>
     
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
+
 </html>
