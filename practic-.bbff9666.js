@@ -1,0 +1,6 @@
+const t="https://680dfedbc47cb8074d91bfe7.mockapi.io/ap/post/comments",e=document.querySelector(".form"),o=document.querySelector(".form-title"),a=document.querySelector(".form-text"),c=document.querySelector(".posts");async function n(){try{let e=await fetch(t),o=await e.json();c.innerHTML="",o.forEach(s)}catch(t){console.error("Помилка при отриманні постів:",t)}}function s(t){let e=document.createElement("li");e.className="post",e.innerHTML=`
+    <h3 class="post-title">${t.title}</h3>
+    <p class="post-text">${t.text}</p>
+    <button class="btn-delete" data-id="${t.id}">\u{412}\u{438}\u{434}\u{430}\u{43B}\u{438}\u{442}\u{438}</button>
+  `,c.appendChild(e)}e.addEventListener("submit",async c=>{c.preventDefault();let n=o.value.trim(),r=a.value.trim();if(n&&r)try{let o=await fetch(t,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({title:n,text:r})}),a=await o.json();s(a),e.reset()}catch(t){console.error("Помилка при створенні поста:",t)}}),c.addEventListener("click",async e=>{if(e.target.classList.contains("btn-delete")){let o=e.target.dataset.id;try{await fetch(`${t}/${o}`,{method:"DELETE"}),e.target.closest(".post").remove()}catch(t){console.error(t)}}}),n();
+//# sourceMappingURL=practic-.bbff9666.js.map
