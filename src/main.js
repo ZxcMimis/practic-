@@ -45,6 +45,7 @@ function renderPost(post) {
     <h3 class="post-title">${post.title}</h3>
     <p class="post-text">${post.text}</p>
     <button class="btn-delete" data-id="${post.id}">Видалити</button>
+    <button class="btn-update" type="button">Оновити-Пост</button>
   `;
   postsList.appendChild(postEl);
 }
@@ -60,6 +61,22 @@ postsList.addEventListener('click', async (e) => {
     }
   }
 });
+
+const openAddModal = (event) =>
+  document.querySelector(".backdrop").classList.remove("is-hidden");
+
+const closeAddModal = (event) =>
+  document.querySelector(".backdrop").classList.add("is-hidden");
+
+postsList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('btn-update')) {
+    openAddModal();
+  }
+});
+document.querySelector(".form__close").addEventListener("click", closeAddModal);
+
+
+
 
 getPosts();
 

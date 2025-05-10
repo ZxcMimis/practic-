@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Блог</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./modal.css">
 </head>
 
 <body>
@@ -14,7 +16,7 @@
             <h1>Мій Блог</h1>
             <form class="form">
                 <input type="text" class="form-title" placeholder="Заголовок" required />
-                <textarea class="form-text" placeholder="Текст поста" required></textarea>
+                <textarea class="form-text" placeholder="Коментар-поста" required></textarea>
                 <button type="submit" class="button">Додати пост</button>
             </form>
         </div>
@@ -28,6 +30,17 @@
        
 
 
+
+
+    <div class="backdrop is-hidden">
+        <form action="" class="form-modal" id="form">
+            <button type="button" class="form__close">X</button>
+            <h2 class="form__title">update posts</h2>
+            <input type="text" class="form__input" id="title-post" placeholder="Заголовок">
+            <input type="number" class="form__input" id="comments" name="comments" placeholder="Коментар-поста">
+            <button type="submit" class="form__submit">Submit!</button>
+        </form>
+    </div>
 
 
     
